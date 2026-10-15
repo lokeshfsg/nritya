@@ -60,6 +60,15 @@ cd client
 npm start
 ```
 
+## Deploy the frontend to Netlify
+
+The root `netlify.toml` configures Netlify to build the React app from `client`,
+publish `client/build`, and route page requests through the app so React Router
+URLs work when opened directly or refreshed. The Express API must be hosted
+separately; set Netlify's `REACT_APP_API_URL` environment variable to that API's
+base URL ending in `/api`, then redeploy. Configure the API's `CLIENT_URLS` to
+include the Netlify site URL.
+
 ## Admin setup
 ```bash
 cd server
